@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Image</title>
+    <style>
+        /* Center the image */
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Fit the image to the screen */
+        img {
+            max-width: 50%;
+            max-height: 50%;
+        }
+
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename=image) }}" alt="Random Image">
+</body>
+</html>
