@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 static_folder = 'static'
-png_files = [f for f in os.listdir(static_folder) if f.endswith('.png') or f.endswith('jpeg')]
+png_files = [f for f in os.listdir(static_folder) if f.endswith('.png') or f.endswith('.jpg') or f.endswith('.jpeg')]
 used_images = []
 
 @app.route('/')
@@ -18,4 +18,4 @@ def index():
     return render_template('index.html', image=random_image)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=7080)
