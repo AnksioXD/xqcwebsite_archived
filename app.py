@@ -1,13 +1,12 @@
 from flask import Flask, render_template
 import random
 import os
-import waitress
 
 api = Flask(__name__, static_folder = 'static')
-png_files = [f for f in os.listdir(static_folder) if f.endswith('.png') or f.endswith('.jpg') or f.endswith('.jpeg')]
+png_files = [f for f in os.listdir('static') if f.endswith('.png') or f.endswith('.jpg') or f.endswith('.jpeg')]
 used_images = []
 
-@app.route('/static/')
+@api.route('/')
 def index():
     if len(used_images) == len(png_files):
         used_images.clear()
@@ -18,4 +17,4 @@ def index():
     return render_template('index.html', image=random_image)
 
 if __name__ == '__main__':
-    app.run(port=7080)
+    api.run(port=7080)
