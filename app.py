@@ -6,7 +6,7 @@ api = Flask(__name__, static_folder = 'static')
 png_files = [f for f in os.listdir('static') if f.endswith('.png') or f.endswith('.jpg') or f.endswith('.jpeg')]
 used_images = []
 
-@api.route('/')
+@api.route('/static')
 def index():
     if len(used_images) == len(png_files):
         used_images.clear()
