@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import random
 import os
 
-app = Flask(__name__)
+api = Flask(__name__)
 static_folder = 'static'
 png_files = [f for f in os.listdir(static_folder) if f.endswith('.png') or f.endswith('.jpg') or f.endswith('.jpeg')]
 used_images = []
